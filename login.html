@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Car Rating Paradise</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="login-section">
+        <div class="login-container">
+            <h2>Welcome Back</h2>
+            <form class="login-form">
+                <div class="form-group">
+                    <input type="text" placeholder="Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" placeholder="Password" required>
+                </div>
+                <button type="submit" class="login-button">Sign In</button>
+            </form>
+            <div class="form-switch">
+                <button class="switch-button" onclick="toggleForm()">Need an account? Sign up</button>
+            </div>
+            <div class="back-home">
+                <a href="index.html" class="back-button">Back to Home</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleForm() {
+            const title = document.querySelector('.login-container h2');
+            const submitButton = document.querySelector('.login-button');
+            const switchButton = document.querySelector('.switch-button');
+            const nameInput = document.querySelector('input[type="text"]');
+            
+            if (title.textContent === 'Welcome Back') {
+                title.textContent = 'Create Account';
+                submitButton.textContent = 'Sign Up';
+                switchButton.textContent = 'Already have an account? Sign in';
+                nameInput.style.display = 'block';
+            } else {
+                title.textContent = 'Welcome Back';
+                submitButton.textContent = 'Sign In';
+                switchButton.textContent = 'Need an account? Sign up';
+                nameInput.style.display = 'none';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('input[type="text"]').style.display = 'none';
+        });
+    </script>
+</body>
+</html>
